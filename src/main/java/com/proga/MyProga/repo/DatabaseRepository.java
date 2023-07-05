@@ -12,8 +12,6 @@ import java.util.List;
 
 @Repository
 public interface DatabaseRepository extends CrudRepository<Database, Long> {
-//    @Transactional
-//    @Modifying
     @Query(nativeQuery = true,  value = "SELECT d.id, d.name, d.age FROM Database d WHERE d.age = (SELECT MAX(d2.age) FROM Database d2)")
     Database findUserWithMaxAge();
 
