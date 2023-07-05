@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изменение юзера</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="containermt-5">
+    <h1>Добавление юзера</h1>
+    <form action="/user/add" method="post">
+        <input type="text" name="name" placeholder="Введите ваше имя" class="form-control">
+        <input type="text" name="id" placeholder="Введите ваш ID" class="form-control">
+        <input type="text" name="age" placeholder="Введите ваш возраст  " class="form-control">
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
+
+<!--<div th:insert="block/footer :: footer"></div>-->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изменение юзера</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+ <div class="container mt-5">
+    <div th:each="el : ${database}" class="alter alter-info mt-2">
+        <h1 th:text="${el.id}"/>
+        <p th:text="${el.name}"/>
+    </div>
+</div>
+
+</body>
+</html>
