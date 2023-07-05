@@ -1,5 +1,6 @@
 package com.proga.MyProga.controllers;
 
+import com.proga.MyProga.models.Bill;
 import com.proga.MyProga.models.Database;
 import com.proga.MyProga.repo.DatabaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,18 +42,17 @@ public class MainController {
 //        return "progas";
 //    }
 //
-//    @GetMapping("/user/add")
-//    public String userAdd(Model model) {
-//        return "userAdd";
-//    }
+    @GetMapping("/user/add")
+    public String userAdd(Model model) {
+        return "userAdd";
+    }
 
-//    @PostMapping("/user/add")
-//    public String userPostAdd(@RequestParam String name, @RequestParam Long id, @RequestParam int age, Model model) {
-//        Database database = new Database(id, name, age);
-//        databaseRepository.save(database);
-//
-//        return "redirect:/progas";
-//    }
+    @PostMapping("/user/add")
+    public String userPostAdd(@RequestParam String name, @RequestParam Long id, @RequestParam int age, Model model) {
+        Database database = new Database(id, name, age);
+        databaseRepository.save(database);
+        return "progas";
+    }
 //
 //    @GetMapping("/user/{id}")
 //    public String userAdd(@PathVariable(value = "id") long id, Model model) {
@@ -94,7 +94,27 @@ public class MainController {
         return "user-moreThen";
         //"user-average";
     }
+    @GetMapping("/user/max")
+    public String userMax(String name, Long id, int age, Model model) {
+        Database database = new Database(id, name, age);
+        databaseRepository.save(database);
+        return "user-details";
+    }
 
+    @GetMapping("/bill/add")
+    public String billAdd(Model model) {
+        return "userAdd";
+    }
+
+    @PostMapping("/bill/add")
+    public String billPostAdd(@RequestParam float ammount, @RequestParam long user_id, Model model) {
+        Optional<Database> database = databaseRepository.findById(user_id);
+        if (database.isPresent()) {
+            Bill bill = new Bill(ammount, database.get());
+            databaseRepository.save(bill);
+        }
+        return "progas";
+    }
 }
 
 //    @GetMapping("/greeting")
