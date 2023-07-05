@@ -23,4 +23,7 @@ public interface DatabaseRepository extends CrudRepository<Database, Long> {
 
     @Query(nativeQuery = true,  value = "SELECT AVG(age) AS average_age FROM Database")
     float findUserAverageAge();
+
+    @Query(nativeQuery = true,  value = "SELECT id, age, name FROM Database WHERE age > (SELECT AVG(age) FROM Database)")
+    List<Database> findUserWithAgeMoreThenAvr();
 }

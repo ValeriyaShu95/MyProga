@@ -86,6 +86,15 @@ public class MainController {
                 //"user-average";
     }
 
+
+    @GetMapping("/user/avg-more-then-age")
+    public String getUserWithAgeMoreThenAvr(Model model) {
+        List<Database> database = databaseRepository.findUserWithAgeMoreThenAvr();
+        model.addAttribute("database", database);
+        return "user-moreThen";
+        //"user-average";
+    }
+
 }
 
 //    @GetMapping("/greeting")
