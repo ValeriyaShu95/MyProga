@@ -7,7 +7,7 @@
 <body>
 
 <div class="container mt-5">
-    <div th:each="el : ${database}" class="alter alter-info mt-2">
+    <div th:each="el : ${users}" class="alter alter-info mt-2">
         <p th:text="${el.name}"/>
         <p th:text="${el.age}"/>
         <p th:text="${el.id}"/>

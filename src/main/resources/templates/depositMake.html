@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Транзакция</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="containerm">
+    <h1>Внесение суммы</h1>
+    <form action="/deposit/make" method="post">
+        <input type="text" name="amount" placeholder="Введите сумму пополнения" class="form-control">
+        <input type="text" name="billToId" placeholder="Введите ID счета, на который хотите зачислить сумму" class="form-control">
+        <button type="submit" class="btn yoyoy">Добавить</button>
+    </form>
+</div>
+
+<!--<div th:insert="block/footer :: footer"></div>-->
+</body>
+</html>

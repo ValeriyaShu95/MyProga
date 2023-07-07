@@ -3,8 +3,8 @@ package com.proga.MyProga.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "database")
-public class Database {
+@Table(name = "users")
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -33,16 +33,16 @@ public class Database {
         return age;
     }
 
-    public Database() {
+    public Users() {
     }
 
-    public Database(Long id, String name, int age) {
+    public Users(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
 
-    public Database(String name, int age) {
+    public Users(String name, int age) {
         this.name = name;
         this.age = age;
     }
