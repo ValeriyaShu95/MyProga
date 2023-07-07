@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Изменение юзера</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div class="containerm">
+    <h1>Добавление счета</h1>
+    <form action="/bill/add" method="post">
+        <input type="text" name="ammount" placeholder="Введите сумму пополнения" class="form-control">
+        <input type="text" name="userId" placeholder="Введите ID юзера" class="form-control">
+        <button type="submit" class="btn yoyoy">Добавить</button>
+    </form>
+</div>
+
+<!--<div th:insert="block/footer :: footer"></div>-->
+</body>
+</html>

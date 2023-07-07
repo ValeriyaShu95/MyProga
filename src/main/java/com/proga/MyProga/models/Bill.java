@@ -7,28 +7,27 @@ import jakarta.persistence.*;
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long billId;
+
     private float ammount;
     @ManyToOne
-    @JoinColumn(name = "id")
-    Database database;
+    @JoinColumn(name = "Id")
+    Users users;
 
     public Bill() {
     }
-
-    public Database getDatabase() {
-        return database;
+    public Users getDatabase() {
+        return users;
     }
 
-    public void setDatabase(Database database) {
-        this.database = database;
+    public void setDatabase(Users users) {
+        this.users = users;
     }
 
-    public Bill(float ammount, Database database) {
+    public Bill(float ammount, Users users) {
         //this.billId = billId;
         this.ammount = ammount;
-        this.database = database;
+        this.users = users;
     }
 
     public Long getBillId() {
